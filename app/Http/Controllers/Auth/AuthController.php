@@ -53,7 +53,12 @@ class AuthController extends Controller
 
         $data = $request->all();
         $check = $this->create($data);
-
+        // $user = User::create(array_merge(
+        //     $request->except('password'),
+        //     [
+        //         'password' => bcrypt($request->password),
+        //     ]
+        // ));
         // User::create($request->all());
 
         return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
